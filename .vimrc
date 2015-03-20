@@ -2,6 +2,9 @@ execute pathogen#infect()
 "Generate any new help tags from new plugins
 execute pathogen#helptags()
 
+"Set nocompatible for rails-vim plugin to work
+set nocompatible
+
 filetype plugin indent on
 syntax on
 set background=dark
@@ -10,12 +13,17 @@ set tags=./tags
 
 set tabstop=2 " number of visual spaces per TAB
 set softtabstop=2 " number of spaces in tab when editing
-set noexpandtab "tabs are not spaces
+set expandtab "tabs are not spaces
 set number "show line numbers
+set shiftwidth=2 "indenting is 2 spaces
 set showmatch "highlight matching [{()}]
 
 "jk is escape
 inoremap jk <esc>
+
+"Write current buffer and quit buffer
+:cnoreabbrev wq w<bar>bd
+:cnoreabbrev q bd
 
 "Use ack instead of grep
 set grepprg=ack
@@ -34,3 +42,9 @@ let g:airline_theme = 'airlineish'
 nmap <leader>l :set list!<CR>
 "Use the same symbols as TextMate for tabstops/returns
 set listchars=tab:▸\ ,eol:¬
+
+"Start VIM with listchars ON
+set list!
+
+"Command to convert spaces to tabs
+command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
