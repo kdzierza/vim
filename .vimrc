@@ -2,10 +2,14 @@ execute pathogen#infect()
 "Generate any new help tags from new plugins
 execute pathogen#helptags()
 
+"Enable matchit plugin
+runtime macros/matchit.vim
+
 "Set nocompatible for rails-vim plugin to work
 set nocompatible
 
 filetype plugin indent on
+"filetype plugin on
 syntax on
 set background=dark
 :colorscheme solarized
@@ -23,7 +27,7 @@ inoremap jk <esc>
 
 "Write current buffer and quit buffer
 :cnoreabbrev wq w<bar>bd
-:cnoreabbrev q bd
+":cnoreabbrev q bd (commented out since it was replacing bd when I tried q!)
 
 "Use ack instead of grep
 set grepprg=ack
@@ -44,7 +48,7 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 "Start VIM with listchars ON
-set list!
+"set list!
 
 "Command to convert spaces to tabs
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
