@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/kdzierza/Documents'
-let g:netrw_dirhist_2='/Users/kdzierza/Documents/Development'
-let g:netrw_dirhist_3='/Users/kdzierza/Documents/Development/reference'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/kdzierza/Documents/webroot/sample_app/app'
+let g:netrw_dirhist_2='/Users/kdzierza/Documents/webroot/sample_app/app/assets'
+let g:netrw_dirhist_3='/Users/kdzierza/Documents/webroot/sample_app/app/assets/stylesheets'
+let g:netrw_dirhist_4='/Users/kdzierza/Documents/Development/git_dangerous/repos/website'
